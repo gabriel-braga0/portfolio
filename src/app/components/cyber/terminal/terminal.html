@@ -1,0 +1,41 @@
+<div class="holo-card clip-corner p-5 sm:p-6 font-mono text-sm">
+  <div class="flex items-center gap-2 pb-3 border-b border-border/60 mb-4">
+    <span class="h-3 w-3 rounded-full bg-destructive"></span>
+    <span class="h-3 w-3 rounded-full bg-neon-yellow"></span>
+    <span class="h-3 w-3 rounded-full bg-neon-green"></span>
+    <span class="ml-3 text-xs neon-text-cyan tracking-widest">/// term.sh — secure_shell</span>
+  </div>
+
+  <div class="space-y-2">
+    @for (l of lines.slice(0, step); track $index) {
+      <div>
+        <div>
+          <span class="neon-text-magenta">{{ l.prompt }}</span>
+          <span class="text-foreground ml-1">{{ l.text }}</span>
+        </div>
+        <div class="text-muted-foreground pl-3">↳ {{ l.out }}</div>
+      </div>
+    }
+
+    @if (step < lines.length) {
+      <div>
+        <span class="neon-text-magenta">{{ lines[step].prompt }}</span>
+        <span class="ml-1">{{ typed }}</span>
+        <span
+          class="inline-block w-2 h-4 bg-neon-cyan ml-0.5 align-middle"
+          style="animation: blink 1s step-end infinite"
+        ></span>
+      </div>
+    }
+
+    @if (step >= lines.length) {
+      <div>
+        <span class="neon-text-magenta">$</span>
+        <span
+          class="inline-block w-2 h-4 bg-neon-cyan ml-0.5 align-middle"
+          style="animation: blink 1s step-end infinite"
+        ></span>
+      </div>
+    }
+  </div>
+</div>

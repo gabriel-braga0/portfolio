@@ -1,0 +1,361 @@
+<div class="relative min-h-screen scanlines">
+  <app-matrix-rain />
+  <div class="scan-line"></div>
+
+  <div
+    class="fixed pointer-events-none z-[101] mix-blend-difference"
+    [style.left.px]="coords.x - 12"
+    [style.top.px]="coords.y - 12"
+  >
+    <div
+      class="w-6 h-6 border border-neon-cyan rounded-full"
+      style="box-shadow: 0 0 10px var(--neon-cyan)"
+    ></div>
+  </div>
+
+  <header
+    class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-neon-cyan/30"
+  >
+    <div
+      class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 text-xs uppercase tracking-widest font-mono"
+    >
+      <div class="flex items-center gap-3">
+        <span
+          class="h-2 w-2 rounded-full bg-neon-green"
+          style="animation: pulse-neon 2s ease-in-out infinite"
+        ></span>
+        <span class="neon-text-cyan">GABRIEL_BRAGA</span>
+        <span class="text-muted-foreground hidden sm:inline">v2.026.04</span>
+      </div>
+      <nav class="hidden md:flex gap-6 text-muted-foreground">
+        <a href="#about" class="hover:neon-text-cyan transition">// sobre</a>
+        <a href="#projects" class="hover:neon-text-magenta transition">// projetos</a>
+        <a href="#skills" class="hover:neon-text-yellow transition">// skills</a>
+        <a href="#contact" class="hover:neon-text-cyan transition">// contato</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <span class="text-muted-foreground hidden sm:inline">Petrópolis_RJ // BR</span>
+        <span class="neon-text-magenta">{{ time || '--:--:--' }}</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative min-h-screen flex items-center pt-24 pb-12 px-4 sm:px-6">
+    <div class="absolute inset-0 overflow-hidden">
+      <img
+        src="cyber-city.jpg"
+        alt="Skyline"
+        width="1600"
+        height="1000"
+        class="w-full h-full object-cover opacity-40"
+      />
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background"
+      ></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto w-full grid lg:grid-cols-12 gap-8 items-center z-10">
+      <div class="lg:col-span-7 space-y-8">
+        <div
+          class="flex items-center gap-3 text-xs uppercase tracking-[0.4em] text-muted-foreground"
+        >
+          <span class="h-px w-10 bg-neon-cyan"></span>
+          <span class="neon-text-cyan">NODE_001 // ONLINE</span>
+        </div>
+
+        <h1
+          class="font-display text-6xl sm:text-7xl lg:text-9xl font-black leading-[0.85] uppercase"
+        >
+          <span class="text-glitch block" data-text="FULLSTACK">FULLSTACK</span>
+          <span class="block neon-text-magenta">DEVELOPER</span>
+          <span class="block text-foreground">/// CLOUD</span>
+        </h1>
+
+        <p
+          class="max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed border-l-2 border-neon-cyan pl-4"
+        >
+          Desenvolvedor fullstack com foco em
+          <span class="neon-text-cyan">Java, Spring, React e AWS</span>. Crio aplicações completas,
+          conectando interfaces modernas a APIs escaláveis e serviços em nuvem. Busco construir
+          sistemas eficientes, bem estruturados e prontos para uso em ambientes reais.
+        </p>
+
+        <div class="flex flex-wrap gap-4">
+          <a
+            href="#projects"
+            class="group relative clip-corner neon-border bg-card px-8 py-4 font-mono uppercase tracking-widest text-sm hover:bg-neon-cyan hover:text-primary-foreground transition-all"
+            style="animation: pulse-neon 3s ease-in-out infinite"
+          >
+            > access_files
+          </a>
+          <a
+            href="#contact"
+            class="clip-corner border border-neon-magenta text-neon-magenta px-8 py-4 font-mono uppercase tracking-widest text-sm hover:bg-neon-magenta hover:text-primary-foreground transition"
+          >
+            jack_in ◆
+          </a>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 max-w-md pt-6 border-t border-border">
+          <div>
+            <div class="text-2xl font-display neon-text-cyan">03</div>
+            <div class="text-[10px] uppercase tracking-widest text-muted-foreground">AWS_CERTS</div>
+          </div>
+          <div>
+            <div class="text-2xl font-display neon-text-cyan">99.9%</div>
+            <div class="text-[10px] uppercase tracking-widest text-muted-foreground">UPTIME</div>
+          </div>
+          <div>
+            <div class="text-2xl font-display neon-text-cyan">∞</div>
+            <div class="text-[10px] uppercase tracking-widest text-muted-foreground">
+              LAMBDA_EXECS
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <app-terminal />
+      </div>
+    </div>
+
+    <div
+      class="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs uppercase tracking-widest text-muted-foreground flex flex-col items-center gap-2"
+      style="animation: float 6s ease-in-out infinite"
+    >
+      <span>scroll // descend</span>
+      <span class="neon-text-cyan">▼</span>
+    </div>
+  </section>
+  <app-marquee [items]="items" />
+
+  <section id="about" class="relative py-32 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-4">
+        <div class="sticky top-32">
+          <div class="text-xs uppercase tracking-[0.4em] neon-text-magenta mb-4">
+            /// 002 — dossier
+          </div>
+          <h2 class="font-display text-5xl lg:text-6xl uppercase font-black leading-none">
+            Quem<br />
+            <span class="neon-text-cyan">opera</span><br />
+            no escuro
+          </h2>
+        </div>
+      </div>
+      <div class="lg:col-span-8 space-y-6">
+        <div class="holo-card clip-corner p-8 space-y-4">
+          <div
+            class="flex items-center justify-between text-xs uppercase tracking-widest text-muted-foreground"
+          >
+            <span>file_id: GBR-2026-04</span>
+            <span class="neon-text-yellow">TOP_SECRET</span>
+          </div>
+          <p class="text-lg leading-relaxed">
+            Desenvolvedor fullstack com sólida base em
+            <span class="neon-text-cyan">Java e Cloud Computing</span>, formado em Análise e
+            Desenvolvimento de Sistemas. Experiência no desenvolvimento de aplicações completas,
+            desde APIs robustas com Spring Boot e Quarkus até interfaces modernas com React e
+            Angular.
+          </p>
+
+          <p class="text-muted-foreground leading-relaxed">
+            Atuo com foco em arquiteturas de microsserviços e sistemas orientados a eventos (EDA),
+            utilizando AWS para construir soluções escaláveis e de alta disponibilidade. Busco
+            aplicar boas práticas de engenharia de software, como Clean Architecture e testes, para
+            entregar sistemas eficientes e bem estruturados.
+          </p>
+
+          <div class="flex flex-wrap gap-2 pt-4">
+            @for (t of aboutTags; track t) {
+              <span
+                class="clip-tag bg-secondary px-4 py-1.5 text-xs uppercase tracking-widest border border-neon-cyan/40"
+              >
+                {{ t }}
+              </span>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="relative py-32 px-4 sm:px-6 grid-bg">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-4">
+        <div>
+          <div class="text-xs uppercase tracking-[0.4em] neon-text-magenta mb-4">
+            /// 003 — archives
+          </div>
+          <h2 class="font-display text-5xl lg:text-7xl uppercase font-black leading-none">
+            projetos<br /><span class="neon-text-magenta">descriptografados</span>
+          </h2>
+        </div>
+        <div class="text-xs uppercase tracking-widest text-muted-foreground">
+          [ {{ projects.length }} entradas // acesso liberado ]
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        @for (p of projects; track p.id) {
+          <article class="holo-card clip-corner p-6 group cursor-pointer h-full flex flex-col">
+            <div class="flex items-center justify-between mb-6">
+              <span
+                class="font-display text-4xl"
+                [class.neon-text-magenta]="p.color === 'magenta'"
+                [class.neon-text-yellow]="p.color === 'yellow'"
+                [class.neon-text-cyan]="p.color !== 'magenta' && p.color !== 'yellow'"
+              >
+                {{ p.id }}
+              </span>
+              <span
+                class="text-[10px] uppercase tracking-widest text-muted-foreground border border-border px-2 py-1"
+              >
+                {{ p.tag }}
+              </span>
+            </div>
+            <h3
+              class="font-display text-2xl uppercase mb-3 group-hover:text-glitch"
+              [attr.data-text]="p.name"
+            >
+              {{ p.name }}
+            </h3>
+            <p class="text-sm text-muted-foreground leading-relaxed flex-1">{{ p.desc }}</p>
+            <div
+              class="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs uppercase tracking-widest"
+            >
+              <span class="text-muted-foreground">view_log</span>
+              <span
+                class="group-hover:translate-x-2 transition-transform"
+                [class.neon-text-magenta]="p.color === 'magenta'"
+                [class.neon-text-yellow]="p.color === 'yellow'"
+                [class.neon-text-cyan]="p.color !== 'magenta' && p.color !== 'yellow'"
+                >→</span
+              >
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="relative py-32 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <div class="text-xs uppercase tracking-[0.4em] neon-text-magenta mb-4">/// 004 — stack</div>
+        <h2 class="font-display text-5xl lg:text-7xl uppercase font-black leading-none mb-8">
+          protocolos<br /><span class="neon-text-yellow">ativos</span>
+        </h2>
+        <p class="text-muted-foreground max-w-md leading-relaxed">
+          Infraestrutura calibrada. Integração completa com serviços de nuvem modernos,
+          desenvolvimento de APIs robustas e arquiteturas resilientes prontas para produção.
+        </p>
+        <div class="mt-12 pt-8 border-t border-border">
+          <div class="text-xs uppercase tracking-[0.4em] neon-text-cyan mb-6">
+            /// credenciais_validadas
+          </div>
+          <div class="flex flex-wrap gap-6">
+            <a
+              href="https://www.credly.com/badges/f1140c7e-52b4-40c7-aad4-da7efa35fcdd/public_url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="aws-certified-cloud-practitioner.png"
+                class="w-w-35 h-35 hover:-translate-y-2 hover:drop-shadow-[0_0_15px_var(--neon-cyan)] transition-all duration-300 cursor-pointer"
+                title="AWS Certified Cloud Practitioner"
+              />
+            </a>
+
+            <a
+              href="https://www.credly.com/badges/d6cc92c6-da85-43f3-981f-e08e2eb0945d/public_url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="aws-certified-developer-associate.png"
+                class="w-w-35 h-35 hover:-translate-y-2 hover:drop-shadow-[0_0_15px_var(--neon-magenta)] transition-all duration-300 cursor-pointer"
+                title="AWS Certified Developer - Associate"
+              />
+            </a>
+
+            <a
+              href="https://www.credly.com/badges/087a725d-fe4c-4b48-986e-c3a4b51d169e/public_url"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="aws-certified-solutions-architect-associate.png"
+                class="w-35 h-35 hover:-translate-y-2 hover:drop-shadow-[0_0_15px_var(--neon-yellow)] transition-all duration-300 cursor-pointer"
+                title="AWS Certified Solutions Architect - Associate"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-5 font-mono">
+        @for (s of skills; track s.name) {
+          <div>
+            <div class="flex justify-between text-sm uppercase tracking-widest mb-2">
+              <span class="text-foreground">{{ s.name }}</span>
+              <span class="neon-text-cyan">{{ s.lvl }}%</span>
+            </div>
+            <div class="h-1.5 bg-secondary border border-border relative overflow-hidden">
+              <div
+                class="absolute inset-y-0 left-0 bg-gradient-to-r from-neon-cyan to-neon-magenta"
+                [style.width.%]="s.lvl"
+                style="box-shadow: 0 0 10px var(--neon-cyan)"
+              ></div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="relative py-32 px-4 sm:px-6">
+    <div class="max-w-4xl mx-auto text-center holo-card clip-corner p-12 lg:p-16">
+      <div class="text-xs uppercase tracking-[0.4em] neon-text-magenta mb-6">
+        /// 005 — open_channel
+      </div>
+      <h2 class="font-display text-5xl lg:text-7xl uppercase font-black mb-6 leading-none">
+        <span class="text-glitch" data-text="JACK_IN">JACK_IN</span>
+      </h2>
+      <p class="text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
+        Canal seguro aberto 24/7. Pronto para arquitetar e compilar novas soluções. Propostas e
+        conexões de rede — todas bem-vindas.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="mailto:contato@seuemail.com"
+          class="clip-corner neon-border bg-card px-8 py-4 font-mono uppercase tracking-widest text-sm hover:bg-neon-cyan hover:text-primary-foreground transition"
+        >
+          init_mail()
+        </a>
+        <a
+          href="https://linkedin.com/in/gabrielbraga0"
+          target="_blank"
+          class="clip-corner border border-neon-magenta text-neon-magenta px-8 py-4 font-mono uppercase tracking-widest text-sm hover:bg-neon-magenta hover:text-primary-foreground transition"
+        >
+          linkedin_///
+        </a>
+        <a
+          href="#"
+          class="clip-corner border border-neon-yellow text-neon-yellow px-8 py-4 font-mono uppercase tracking-widest text-sm hover:bg-neon-yellow hover:text-primary-foreground transition"
+        >
+          github_///
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-neon-cyan/30 py-8 px-4 sm:px-6">
+    <div
+      class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs uppercase tracking-widest text-muted-foreground font-mono"
+    >
+      <span>© 2026 GABRIEL_/// — all packets routed</span>
+      <span class="neon-text-cyan">// powered by java & aws</span>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,13 @@
+<div class="relative overflow-hidden border-y border-neon-cyan/40 bg-card/40 py-4">
+  <div
+    class="flex gap-12 whitespace-nowrap"
+    style="animation: marquee 30s linear infinite; width: max-content"
+  >
+    @for (it of list; track $index) {
+      <span class="font-display text-2xl uppercase tracking-[0.3em] flex items-center gap-12">
+        <span class="neon-text-cyan">{{ it }}</span>
+        <span class="neon-text-magenta">◆</span>
+      </span>
+    }
+  </div>
+</div>

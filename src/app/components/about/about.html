@@ -1,0 +1,49 @@
+<section id="about" class="relative py-32 px-4 sm:px-6">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-4">
+      <div class="sticky top-32">
+        <div class="text-xs uppercase tracking-[0.4em] neon-text-magenta mb-4">
+          /// 002 — dossier
+        </div>
+        <h2 class="font-display text-5xl lg:text-6xl uppercase font-black leading-none">
+          Quem<br />
+          <span class="neon-text-cyan">opera</span><br />
+          no escuro
+        </h2>
+      </div>
+    </div>
+    <div class="lg:col-span-8 space-y-6">
+      <div class="holo-card clip-corner p-8 space-y-4">
+        <div
+          class="flex items-center justify-between text-xs uppercase tracking-widest text-muted-foreground"
+        >
+          <span>file_id: GBR-2026-04</span>
+          <span class="neon-text-yellow">TOP_SECRET</span>
+        </div>
+        <p class="text-lg leading-relaxed">
+          Desenvolvedor fullstack com sólida base em
+          <span class="neon-text-cyan">Java e Cloud Computing</span>, formado em Análise e
+          Desenvolvimento de Sistemas. Experiência no desenvolvimento de aplicações completas, desde
+          APIs robustas com Spring Boot e Quarkus até interfaces modernas com React e Angular.
+        </p>
+
+        <p class="text-muted-foreground leading-relaxed">
+          Atuo com foco em arquiteturas de microsserviços e sistemas orientados a eventos (EDA),
+          utilizando AWS para construir soluções escaláveis e de alta disponibilidade. Busco aplicar
+          boas práticas de engenharia de software, como Clean Architecture e testes, para entregar
+          sistemas eficientes e bem estruturados.
+        </p>
+
+        <div class="flex flex-wrap gap-2 pt-4">
+          @for (t of tags; track t) {
+            <span
+              class="clip-tag bg-secondary px-4 py-1.5 text-xs uppercase tracking-widest border border-neon-cyan/40"
+            >
+              {{ t }}
+            </span>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

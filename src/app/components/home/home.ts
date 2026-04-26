@@ -14,11 +14,26 @@ import { MarqueeComponent } from '../cyber/marquee/marquee';
 import { isPlatformBrowser } from '@angular/common';
 import { Projects } from '../projects/projects';
 import { Skills } from '../skills/skills';
+import { About } from '../about/about';
+import { Header } from '../header/header';
+import { Resume } from '../resume/resume';
+import { Links } from '../links/links';
+import { Footer } from '../footer/footer';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatrixRainComponent, TerminalComponent, MarqueeComponent, Projects, Skills],
+  imports: [
+    MatrixRainComponent,
+    MarqueeComponent,
+    Projects,
+    Skills,
+    About,
+    Header,
+    Resume,
+    Links,
+    Footer,
+  ],
   templateUrl: './home.html',
 })
 export class Home implements OnInit, OnDestroy {

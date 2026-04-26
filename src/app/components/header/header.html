@@ -1,0 +1,26 @@
+<header
+  class="fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-background/60 border-b border-neon-cyan/30"
+>
+  <div
+    class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 text-xs uppercase tracking-widest font-mono"
+  >
+    <div class="flex items-center gap-3">
+      <span
+        class="h-2 w-2 rounded-full bg-neon-green"
+        style="animation: pulse-neon 2s ease-in-out infinite"
+      ></span>
+      <span class="neon-text-cyan">GABRIEL_BRAGA</span>
+      <span class="text-muted-foreground hidden sm:inline">v2.026.04</span>
+    </div>
+    <nav class="hidden md:flex gap-6 text-muted-foreground">
+      <a href="#about" class="hover:neon-text-cyan transition">// sobre</a>
+      <a href="#projects" class="hover:neon-text-magenta transition">// projetos</a>
+      <a href="#skills" class="hover:neon-text-yellow transition">// skills</a>
+      <a href="#contact" class="hover:neon-text-cyan transition">// contato</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <span class="text-muted-foreground hidden sm:inline">Petrópolis_RJ // BR</span>
+      <span class="neon-text-magenta">{{ time || '--:--:--' }}</span>
+    </div>
+  </div>
+</header>

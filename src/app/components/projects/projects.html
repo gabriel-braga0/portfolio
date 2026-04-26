@@ -1,0 +1,58 @@
+<section id="projects" class="relative py-32 px-4 sm:px-6 grid-bg">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-4">
+      <div>
+        <div class="text-xs uppercase tracking-[0.4em] neon-text-magenta mb-4">
+          /// 003 — archives
+        </div>
+        <h2 class="font-display text-5xl lg:text-7xl uppercase font-black leading-none">
+          projetos<br /><span class="neon-text-magenta">descriptografados</span>
+        </h2>
+      </div>
+      <div class="text-xs uppercase tracking-widest text-muted-foreground">
+        [ {{ projects.length }} entradas // acesso liberado ]
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (p of projects; track p.id) {
+        <article class="holo-card clip-corner p-6 group cursor-pointer h-full flex flex-col">
+          <div class="flex items-center justify-between mb-6">
+            <span
+              class="font-display text-4xl"
+              [class.neon-text-magenta]="p.color === 'magenta'"
+              [class.neon-text-yellow]="p.color === 'yellow'"
+              [class.neon-text-cyan]="p.color !== 'magenta' && p.color !== 'yellow'"
+            >
+              {{ p.id }}
+            </span>
+            <span
+              class="text-[10px] uppercase tracking-widest text-muted-foreground border border-border px-2 py-1"
+            >
+              {{ p.tag }}
+            </span>
+          </div>
+          <h3
+            class="font-display text-2xl uppercase mb-3 group-hover:text-glitch"
+            [attr.data-text]="p.name"
+          >
+            {{ p.name }}
+          </h3>
+          <p class="text-sm text-muted-foreground leading-relaxed flex-1">{{ p.desc }}</p>
+          <div
+            class="mt-6 pt-4 border-t border-border flex items-center justify-between text-xs uppercase tracking-widest"
+          >
+            <span class="text-muted-foreground">view_log</span>
+            <span
+              class="group-hover:translate-x-2 transition-transform"
+              [class.neon-text-magenta]="p.color === 'magenta'"
+              [class.neon-text-yellow]="p.color === 'yellow'"
+              [class.neon-text-cyan]="p.color !== 'magenta' && p.color !== 'yellow'"
+              >→</span
+            >
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

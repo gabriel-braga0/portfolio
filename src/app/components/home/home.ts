@@ -12,17 +12,49 @@ import { MatrixRainComponent } from '../cyber/matrix-rain/matrix-rain';
 import { TerminalComponent } from '../cyber/terminal/terminal';
 import { MarqueeComponent } from '../cyber/marquee/marquee';
 import { isPlatformBrowser } from '@angular/common';
+import { Projects } from '../projects/projects';
+import { Skills } from '../skills/skills';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatrixRainComponent, TerminalComponent, MarqueeComponent],
+  imports: [MatrixRainComponent, TerminalComponent, MarqueeComponent, Projects, Skills],
   templateUrl: './home.html',
 })
 export class Home implements OnInit, OnDestroy {
   coords = { x: 0, y: 0 };
   time = '--:--:--';
   private timer: any;
+
+  items = [
+    'NEURAL_LINK',
+    'GHOST_IN_THE_SHELL',
+    'BLADE_RUNNER',
+    'CHROME_DREAMS',
+    'WIRED_SOULS',
+    'ZERO_DAY',
+  ];
+
+  skills_desc = `Infraestrutura calibrada. Integração completa com serviços de nuvem modernos,
+        desenvolvimento de APIs robustas e arquiteturas resilientes prontas para produção.`;
+
+  skills = [
+    { name: 'Java / Spring Boot', lvl: 85 },
+    { name: 'React / Angular', lvl: 75 },
+    { name: 'AWS / Cloud', lvl: 80 },
+    { name: 'APIs & Microsservices', lvl: 85 },
+    { name: 'SQL / NoSQL', lvl: 75 },
+    { name: 'Docker / DevOps', lvl: 65 },
+  ];
+  aboutTags = [
+    'fullstack',
+    'java',
+    'spring boot',
+    'react/angular',
+    'architecture',
+    'aws',
+    'quarkus',
+  ];
 
   projects = [
     {
@@ -67,31 +99,6 @@ export class Home implements OnInit, OnDestroy {
       desc: 'Automação de testes end-to-end com execução de cenários e validação de fluxos críticos utilizando ferramentas de QA.',
       color: 'yellow',
     },
-  ];
-  items = [
-    'NEURAL_LINK',
-    'GHOST_IN_THE_SHELL',
-    'BLADE_RUNNER',
-    'CHROME_DREAMS',
-    'WIRED_SOULS',
-    'ZERO_DAY',
-  ];
-  skills = [
-    { name: 'Java / Spring Boot', lvl: 85 },
-    { name: 'React / Angular', lvl: 75 },
-    { name: 'AWS / Cloud', lvl: 80 },
-    { name: 'APIs & Microsservices', lvl: 85 },
-    { name: 'SQL / NoSQL', lvl: 75 },
-    { name: 'Docker / DevOps', lvl: 65 },
-  ];
-  aboutTags = [
-    'fullstack',
-    'java',
-    'spring boot',
-    'react/angular',
-    'architecture',
-    'aws',
-    'quarkus',
   ];
 
   constructor(
